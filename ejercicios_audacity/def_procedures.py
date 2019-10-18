@@ -3,6 +3,6 @@ def sumas(a, b):
     print("a is", a)
     a = a + b
     print("a is", a)
-    
 
-print sumas(5, 10)
+
+print(sumas(5, 10))
