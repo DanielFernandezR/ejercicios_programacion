@@ -8,17 +8,14 @@ def alphabet_position(text):
     text = text.lower()
     resultado = text.replace(" ", "")
     for caracter in resultado:
-        if caracter not in diccionario:
-            resultado = resultado.replace(caracter, "")
-        elif caracter == diccionario[caracter]:
-            continue
-        else:
+        if caracter in diccionario:
             resultado = resultado.replace(caracter, diccionario[caracter])
+        else:
+            resultado = resultado.replace(caracter, "")
     return resultado[:-1]
 
 
 if __name__ == "__main__":
 
     assert alphabet_position(
-        "The sunset sets at twelve o' clock.") ==
-    "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+        "The sunset sets at twelve o' clock.") == "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
