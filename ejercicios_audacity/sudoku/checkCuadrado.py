@@ -1,9 +1,14 @@
 def checkCuadrado(sudoku):
     assert isinstance(sudoku, list)
+    sudokuSano = True
+
     for lista in sudoku:
         if len(sudoku) != len(lista):
-            return False
-    return True
+            sudokuSano = False
+            break
+
+    assert isinstance(sudokuSano, bool)
+    return sudokuSano
 
 
 if __name__ == "__main__":
